@@ -16,7 +16,7 @@ const App: React.FC<AppProps> = ({ }) => {
             </ul>
             <Route path="/" exact component={Title} />
             <Route path="/list/:id" component={List} />
-            <Route path="/home" component={Home} />
+            <Route path="/home/" component={Home} />
         </BrowserRouter>
     );
 }
