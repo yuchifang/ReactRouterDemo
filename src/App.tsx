@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route, Link } from "react-router-dom"
+import { BrowserRouter, Route, Link, Switch } from "react-router-dom"
 import Title from "./Pages/Title"
 import List from "./Pages/List"
 import Home from "./Pages/Home"
@@ -14,9 +14,12 @@ const App: React.FC<AppProps> = ({ }) => {
                 <li><Link to="/">首頁</Link></li>
                 <li><Link to="/list/123">列表</Link></li>
             </ul>
-            <Route path="/" exact component={Title} />
-            <Route path="/list/:id" component={List} />
-            <Route path="/home/" component={Home} />
+            <Switch>
+                <Route exact path="/" component={Title} />
+                <Route path="/list/:id" component={List} />
+                <Route path="/" render={() => <h1>render</h1>} component={() => <h1>404</h1>} >sss</Route>
+            </Switch>
+
         </BrowserRouter>
     );
 }

@@ -8,13 +8,9 @@ const Title = () => {
         { id: "003", title: "333" }
     ])
 
-    let history = useHistory()
-    history.push("/home");
-    console.log({ history });
+
     return (
         <>
-            {/* <Redirect to="/list/home/" /> */}
-
             <h2>ReactRouter</h2>
             <ul>
                 {
